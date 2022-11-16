@@ -1,11 +1,9 @@
-package no.hvl.dat108.paamelding;
+package no.hvl.dat108.oblig4;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 public class LoginUtil {
-	/*
-	 * 
 	
 	// Antall sekunder før utlogging
 	private final static int MAX_INTERVAL = 60;
@@ -27,5 +25,4 @@ public class LoginUtil {
 	public static boolean erBrukerInnlogget(HttpSession session) {
 		return session != null && session.getAttribute("username") != null;
 	}
-	 */
 }

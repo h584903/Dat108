@@ -1,4 +1,4 @@
-package no.hvl.dat108.paamelding;
+package no.hvl.dat108.oblig4;
 
 import javax.servlet.http.HttpSession;
 
@@ -9,10 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
-@RequestMapping("/liste")
+@RequestMapping("/deltakerliste")
 public class ListController {
-	/*
-	 * 
+	
 	@GetMapping
 	public String visListe(HttpSession session, RedirectAttributes ra) {
 		
@@ -24,5 +23,4 @@ public class ListController {
 		
 		return "deltakerliste";
 	}
-	 */
 }

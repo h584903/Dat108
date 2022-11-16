@@ -1,4 +1,4 @@
-package no.hvl.dat108.paamelding;
+package no.hvl.dat108.oblig4;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -17,23 +17,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class DeltakerController {
 	
 	
-	@GetMapping (value="/paamelding")
+	@GetMapping (value="/registrering")
 	public String paameldingmethod(Model model) {
 		model.addAttribute("deltaker", new Deltaker());
-		return "paamelding";
+		return "registrering";
 	}
 	
-	/*
-	 * 
 	// Må lage en redirdect
 	@PostMapping("lagreDeltaker")
 	public String lagreDeltaker(@Valid @ModelAttribute("deltaker")Deltaker deltaker, HttpSession session, BindingResult bindingResult) {
 		
-		// Hvis vi har errors skal vi gåtilbake med feilmedlingene som automatisk kommer fra form
-		if(bindingResult.hasErrors()) {
-			return "paamelding";
-		}
 
+		if(bindingResult.hasErrors()) {
+			return "registrering";
+		}
 		
 		System.err.println(deltaker);
 		session.setAttribute("bekreftelse",deltaker);
@@ -52,5 +49,8 @@ public class DeltakerController {
 		System.err.println("Bekreftelse av: " + session.getAttribute("bekreftelse"));
 		return "paameldt";
 	}
-	 */
+	@PostMapping("/paameldt")
+	public String paameldtRe(HttpSession session) {
+		return "redirect:deltakerliste";
+	}
 }

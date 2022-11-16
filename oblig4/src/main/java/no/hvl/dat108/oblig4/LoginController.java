@@ -1,4 +1,4 @@
-package no.hvl.dat108.paamelding;
+package no.hvl.dat108.oblig4;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -13,36 +13,30 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class LoginController {
+
 	
-	//@Value("{app.message.invalidUsername}") private String INVALID_USERNAME;
-	
-	//@Value("{app.message.loggedOut}") private String LOGGUT;
-	
-	/*
-	 * 
 	@GetMapping (value="/login")
 	public String innlogging(Model model) {
 		return "innlogging";
 	}
 	
 	@PostMapping (value="/login")
-	public String innlogg(@RequestParam String username, HttpServletRequest request, RedirectAttributes ra) {
+	public String innlogg(@RequestParam String mobil, HttpServletRequest request, RedirectAttributes ra) {
 		
-		if(username == null || username.length() < 3) {
-			ra.addFlashAttribute("redirectMessage","Invalid username");
-			return "redirect:innlogging";
+		if(mobil == null || mobil.length() < 3) {
+			ra.addFlashAttribute("redirectMessage", "Mobilnummeret er ikke registrert");
+			return "redirect:registrering";
 		}
 		
-		LoginUtil.loggInnBruker(request, username);
+		LoginUtil.loggInnBruker(request, mobil);
 		
-		
-		return "redirect:deltakerliste";
+		return "redirect:registrering";
+		//return "redirect:deltakerliste";
 	}
 	
-	@PostMapping ("logout")
+	@PostMapping ("/logout")
 	public String logout(HttpSession session, RedirectAttributes ra) {
-		ra.addFlashAttribute("redirectMessage", "Logged out");
+		ra.addFlashAttribute("redirectMessage", "Du er logget ut");
 		return "redirect:innlogging";
 	}
-	 */
 }
